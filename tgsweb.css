@@ -1,0 +1,155 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+/* class navbar-arsenaltidak di perlukan karen kita hanya memiliki satu komponen header
+    jadi kamu cukup tuliskan header
+*/
+header {
+    width: 100%;
+    background-color: #f20c1b;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+    margin: 0; /* Menghilangkan margin */
+}
+
+header .list-arsenal ul {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem 1.5rem;
+}
+
+header .list-arsenal li {
+    list-style-type: none;
+    text-decoration-line: none;
+}
+
+header .list-arsenal li a {
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    font-size: 1.5vw; 
+    font-weight: 500;
+    color: white;
+    transition: all 0.15s ease-out;
+}
+
+header .list-arsenal li:hover a {
+    color: #425c77;
+    background-color: whitesmoke;
+    border-radius: 200px;
+}
+
+header .logo-arsenal img {
+    max-width: 100px; /* Ukuran logo saya bekecil menjadi 100px */
+    height: auto; /* Menjaga aspek rasio logo */
+}
+
+header .nama-arsenal{
+    padding-left: 2rem;
+    font-size: 2vw; 
+    flex-direction: column;
+    text-align: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+main {
+    font-family: "Nunito";
+    padding: 2%;
+    display: flex;
+    gap: 1rem;
+    flex-grow: 1; /* Menambahkan fleksibilitas untuk mengisi sisa ruang */
+}
+
+main .content {
+    flex-grow: 7; /* Menggunakan flex-grow: 7 untuk 70% lebar */
+    max-width: 70%; /* Menentukan lebar maksimum content */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem 2rem;
+}
+
+main aside {
+    flex-grow: 3; /* Menggunakan flex-grow: 3 untuk 30% lebar */
+    max-width: 30%; /* Menentukan lebar maksimum aside */
+    font-family: "Montserrat";
+    color: rgba(36, 28, 28, 0.935);
+    background-color: white;
+    text-align: center;
+    padding-bottom: 75%;
+    overflow: hidden; /* Mengatur overflow agar konten yang melebihi batas tidak ditampilkan */
+}
+
+main aside .gambar-jadwal {
+    max-width: 100%; 
+    height: auto; /* Memastikan aspek rasio gambar tetap terjaga */
+    object-fit: cover; /* Memastikan gambar ditampilkan tanpa distorsi */
+}
+.featured-image {
+    width: 100%;
+    max-height: 50vh; /* Ukuran responsif */
+    object-fit: cover;
+    object-position: top;
+}
+
+main aside {
+    flex-grow: 3; /* Menggunakan flex-grow: 3 untuk 30% lebar */
+    font-family: "Montserrat";
+    color: rgba(36, 28, 28, 0.935);
+    background-color: white;
+    text-align: center;
+    padding-bottom: 75%;
+}
+
+footer {
+    padding: 20px;
+    font-size: 1.5vw; 
+    color: white;
+    background-color: rgb(250, 0, 17);
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column; 
+    }
+    main .content {
+        max-width: 100%; 
+    }
+    main aside {
+        max-width: 100%; 
+    }
+    header {
+        flex-direction: column;
+    }
+    header .logo-arsenal {
+        display: none;
+    }
+    header .nama-arsenal {
+        padding-left: 0;
+        font-size: 2vw;
+    }
+    header .list-arsenal {
+        display: block;
+    }
+}
